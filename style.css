@@ -405,3 +405,23 @@ body {
         padding: 150px 0 80px;
     }
 }
+/* Mobile Menu Tip */
+.menu-note {
+    text-align: center;
+    padding: 15px 10px !important;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    color: #95a5a6;
+    font-size: 0.85rem;
+}
+
+.menu-note small {
+    display: block;
+}
+
+/* Make sure it only shows on mobile */
+@media (min-width: 768px) {
+    .menu-note {
+        display: none;
+    }
+}
