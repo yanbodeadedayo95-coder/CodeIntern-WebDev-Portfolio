@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - CodeIntern Task 3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styles - we'll improve later */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 { margin-bottom: 10px; }
+        .search-box {
+            display: flex;
+            margin: 20px 0;
+        }
+        input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+        button {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .weather-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .hidden { display: none; }
+        .error { 
+            background: rgba(255, 0, 0, 0.2); 
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather App</h1>
+            <p>Get real-time weather for any city worldwide</p>
+        </header>
+        
+        <main>
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name (e.g., Lagos, London, Tokyo)">
+                <button id="searchBtn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+            
+            <!-- Weather Display Area -->
+            <div class="weather-card hidden" id="weatherResult">
+                <div class="weather-header">
+                    <h2 id="cityName">City Name</h2>
+                    <p id="weatherDesc">Clear Sky</p>
+                </div>
+                
+                <div class="weather-main">
+                    <div class="temp">
+                        <h3 id="temperature">25°C</h3>
+                        <p>Temperature</p>
+                    </div>
+                    <div class="details">
+                        <p><i class="fas fa-tint"></i> Humidity: <span id="humidity">65%</span></p>
+                        <p><i class="fas fa-wind"></i> Wind: <span id="windSpeed">5.5 km/h</span></p>
+                        <p><i class="fas fa-compress-alt"></i> Pressure: <span id="pressure">1013 hPa</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Error Message -->
+            <div class="error hidden" id="errorMessage">
+                <p><i class="fas fa-exclamation-triangle"></i> City not found. Please check the spelling and try again.</p>
+            </div>
+            
+            <!-- Loading Spinner -->
+            <div class="loading hidden" id="loading">
+                <p><i class="fas fa-spinner fa-spin"></i> Fetching weather data...</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p style="text-align: center; margin-top: 30px; opacity: 0.8;">
+                <i class="fas fa-code"></i> CodeIntern Task 3 - Weather App | Powered by OpenWeatherMap API
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // API Configuration
+        const API_KEY = 'YOUR_API_KEY_HERE'; // You'll get this next
+        const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=${API_KEY}&q=`;
+        
+        // DOM Elements
+        const cityInput = document.getElementById('cityInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const weatherResult = document.getElementById('weatherResult');
+        const errorMessage = document.getElementById('errorMessage');
+        const loading = document.getElementById('loading');
+        
+        // Weather display elements
+        const cityName = document.getElementById('cityName');
+        const weatherDesc = document.getElementById('weatherDesc');
+        const temperature = document.getElementById('temperature');
+        const humidity = document.getElementById('humidity');
+        const windSpeed = document.getElementById('windSpeed');
+        const pressure = document.getElementById('pressure');
+        
+        // Search function
+        async function searchWeather() {
+            const city = cityInput.value.trim();
+            
+            if (!city) {
+                alert('Please enter a city name');
+                return;
+            }
+            
+            // Show loading, hide previous results/errors
+            loading.classList.remove('hidden');
+            weatherResult.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+            
+            try {
+                const response = await fetch(API_URL + city);
+                const data = await response.json();
+                
+                // Hide loading
+                loading.classList.add('hidden');
+                
+                if (data.cod === 200) {
+                    // Success - display weather
+                    displayWeather(data);
+                } else {
+                    // Error - city not found
+                    showError();
+                }
+            } catch (error) {
+                // Network or other error
+                loading.classList.add('hidden');
+                showError();
+                console.error('Error fetching weather:', error);
+            }
+        }
+        
+        // Display weather data
+        function displayWeather(data) {
+            cityName.textContent = `${data.name}, ${data.sys.country}`;
+            weatherDesc.textContent = data.weather[0].description;
+            temperature.textContent = `${Math.round(data.main.temp)}°C`;
+            humidity.textContent = `${data.main.humidity}%`;
+            windSpeed.textContent = `${data.wind.speed} km/h`;
+            pressure.textContent = `${data.main.pressure} hPa`;
+            
+            // Show weather card
+            weatherResult.classList.remove('hidden');
+        }
+        
+        // Show error message
+        function showError() {
+            errorMessage.classList.remove('hidden');
+            cityInput.focus();
+        }
+        
+        // Event Listeners
+        searchBtn.addEventListener('click', searchWeather);
+        
+        // Search on Enter key
+        cityInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                searchWeather();
+            }
+        });
+        
+        // Initial message
+        console.log('Weather App loaded. Ready to fetch weather data!');
+    </script>
+</body>
+                                                   </html>
