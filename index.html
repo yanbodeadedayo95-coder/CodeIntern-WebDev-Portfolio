@@ -3,184 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yanbode Adedayo | CodeIntern Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Yanbode Adedayo David - Portfolio</title>
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="#"><i class="fas fa-code"></i> Yanbode Adedayo</a>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h3 style="color: #2c5aa0; margin: 0;">Yanbode Adedayo David</h3>
             </div>
-            <ul class="nav-links">
-                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li class="menu-note"><small><i>Tip: Tap ☰ again to close</i></small></li>
-            </ul>
-            <button class="menu-btn" id="menuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Web Developer & CodeIntern</h1>
-                <p class="hero-subtitle">Hi, I'm <strong>Yanbode Adedayo David</strong></p>
-                <p class="hero-description">
-                    Started learning web development in September 2025 through freeCodeCamp and tutorials. 
-                    Currently building real projects in the CodeIntern Web Development Internship.
-                </p>
-                <a href="#projects" class="btn">View My Projects</a>
-            </div>
-            <div class="hero-image">
-                <div class="icon-placeholder">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm Yanbode Adedayo David</h1>
+            <p class="hero-subtitle">16-year-old Web Developer from Nigeria</p>
+            <p class="hero-description">Learning web development since September 2025 through freeCodeCamp and Facebook tutorials</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
-    </header>
+        <!-- Quick inline style for the hero image placeholder -->
+        <div class="hero-image" style="background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); width: 300px; height: 300px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);">
+            <i class="fas fa-code"></i>
+        </div>
+    </section>
 
     <!-- About Section -->
-    <section id="about" class="section about">
+    <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">My Learning Journey</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon">
-                        <i class="fas fa-graduation-cap"></i>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Yanbode Adedayo David, a 16-year-old student from Nigeria who started learning web development in September 2025. I'm currently participating in the CodeIntern web development internship, and this portfolio is my Task 1 submission!</p>
+                    
+                    <p>My journey into coding began with freeCodeCamp's responsive web design course, and I've been supplementing my learning with Facebook tutorials and YouTube videos. I'm particularly interested in mobile development and creating responsive websites that work perfectly on all devices.</p>
+                    
+                    <p>When I'm not coding, I'm probably studying for school or thinking about my next project. I'm excited to continue learning and building more complex applications!</p>
+                    
+                    <div class="skills">
+                        <h3>What I'm Learning:</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">Git & GitHub</span>
+                            <span class="skill-tag">Mobile Development</span>
+                        </div>
                     </div>
-                    <h3>Started September 2025</h3>
-                    <p>Began with freeCodeCamp's responsive web design curriculum. Learning HTML, CSS, and JavaScript fundamentals.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Learning Resources</h3>
-                    <p>Using freeCodeCamp, Facebook tutorial reels, and AI assistants to solve coding problems and learn new concepts.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile-First Focus</h3>
-                    <p>Interested in creating websites that work perfectly on phones since I often code on mobile devices.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section projects">
+    <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
-            <p class="section-subtitle">Real websites I've built and hosted</p>
-            
-            <div class="project-card featured">
-                <div class="project-badge">
-                    <i class="fas fa-star"></i> Live Project
+            <div class="projects-grid">
+                <!-- Project 1: DCG Animals -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400&h=250&fit=crop" alt="DCG Animals Website - Pet care and adoption" onerror="this.src='https://via.placeholder.com/400x250/4A90E2/FFFFFF?text=DCG+Animals'">
+                    </div>
+                    <div class="project-content">
+                        <h3>DCG Animals Website</h3>
+                        <p>A comprehensive pet resource website featuring animal care guides, behavior tips, and habitat information. Based on the scanned content, it's a well-structured site with expert guides on animal behavior, care requirements, and training tips.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://dcg-animals.netlify.app" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/yanbodeadedayo95-coder" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                        <div class="project-rating">
+                            <span class="rating-label">My Rating:</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="rating-text">4/5 - Good structure, room for improvement</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="project-title">DCG Animals Website</h3>
-                <p class="project-description">
-                    A multi-page website about pets (dogs, cats, fish, birds). My first project deployed online.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">Netlify</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://dcg-animals.netlify.app" target="_blank" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a href="https://github.com/yanbodeadedayo95-coder" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
 
-            <div class="project-card">
-                <h3 class="project-title">Portfolio Website</h3>
-                <p class="project-description">
-                    This responsive portfolio built as Task 1 for CodeIntern internship. Focused on clean design.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">Responsive</span>
+                <!-- Project 2: Mosaic Kitchen -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&h=250&fit=crop" alt="Mosaic Kitchen - African restaurant website" onerror="this.src='https://via.placeholder.com/400x250/764ba2/FFFFFF?text=Mosaic+Kitchen'">
+                    </div>
+                    <div class="project-content">
+                        <h3>Mosaic Kitchen</h3>
+                        <p>An elegant restaurant website celebrating African culinary traditions with modern techniques. Features Grilled Suya Salmon, Truffle Mushroom Risotto, and Tomato & Mozzarella Mosaic dishes with a reservation system.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Responsive</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://yanbodeadedayo95-coder.github.io/mosaic-kitchen-site/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/yanbodeadedayo95-coder/mosaic-kitchen-site" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                        <div class="project-rating">
+                            <span class="rating-label">My Rating:</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-text">5/5 - Professional design, great content</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-status">
-                    <i class="fas fa-code"></i> CodeIntern Task 1
+
+                <!-- Project 3: Personal Portfolio -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop" alt="Personal Portfolio Website" onerror="this.src='https://via.placeholder.com/400x250/667eea/FFFFFF?text=My+Portfolio'">
+                    </div>
+                    <div class="project-content">
+                        <h3>Personal Portfolio</h3>
+                        <p>This very portfolio website! My first major project showcasing my skills and projects. Built with modern web technologies, featuring smooth scrolling, responsive design, and interactive elements.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/yanbodeadedayo95-coder" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                        <div class="project-rating">
+                            <span class="rating-label">My Rating:</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="rating-text">4/5 - Still learning and improving!</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Simple Counter Demo -->
-            <div class="demo-box">
-                <h3><i class="fas fa-calculator"></i> Simple JS Demo</h3>
-                <p>This button uses JavaScript to count clicks:</p>
-                <button class="demo-btn" id="clickCounter">
-                    Click Me: <span id="count">0</span>
-                </button>
-                <p class="demo-note">Each click increases the number - that's JavaScript working!</p>
+
+                <!-- Project 4: Weather App -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=250&fit=crop" alt="Weather App" onerror="this.src='https://via.placeholder.com/400x250/667eea/FFFFFF?text=Weather+App'">
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather App</h3>
+                        <p>Upcoming project: A weather application that displays current weather conditions and forecasts using a weather API. Will feature location-based weather, 5-day forecasts, and beautiful weather icons.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-status">Coming Soon!</span>
+                        </div>
+                        <div class="project-rating">
+                            <span class="rating-label">Status:</span>
+                            <span class="status-text">In Planning Phase</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact & Connect</h2>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">I'd love to hear from you! Whether you have a project in mind or just want to connect.</p>
             
-            <div class="contact-grid">
-                <a href="https://www.linkedin.com/in/yanbode-adedayo-8a10283a1" target="_blank" class="contact-card">
-                    <div class="contact-icon">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/yanbode-adedayo-8a10283a1" target="_blank">LinkedIn</a>
                     </div>
-                    <h3>LinkedIn</h3>
-                    <p>yanbode-adedayo-8a10283a1</p>
-                </a>
-                
-                <a href="https://github.com/yanbodeadedayo95-coder" target="_blank" class="contact-card">
-                    <div class="contact-icon">
+                    <div class="contact-item">
                         <i class="fab fa-github"></i>
+                        <a href="https://github.com/yanbodeadedayo95-coder" target="_blank">GitHub</a>
                     </div>
-                    <h3>GitHub</h3>
-                    <p>yanbodeadedayo95-coder</p>
-                </a>
-                
-                <a href="mailto:yanbodeadedayo95@gmail.com" class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>yanbodeadedayo95@gmail.com</p>
-                </a>
-                
-                <a href="https://wa.me/2347045056863" target="_blank" class="contact-card">
-                    <div class="contact-icon">
+                    <div class="contact-item">
                         <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/2347045056863" target="_blank">WhatsApp</a>
                     </div>
-                    <h3>WhatsApp</h3>
-                    <p>+234 704 505 6863</p>
-                </a>
-            </div>
-            
-            <!-- Current Time Display -->
-            <div class="time-display">
-                <p><i class="fas fa-clock"></i> Current Time: <span id="currentTime">Loading...</span></p>
-            </div>
-            
-            <div class="internship-note">
-                <p><i class="fas fa-certificate"></i> CodeIntern Web Development Internship | December 10 2025 - January 9 2026</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:yanbodeadedayo95@gmail.com">yanbodeadedayo95@gmail.com</a>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
@@ -188,73 +260,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-code"></i> Yanbode Portfolio
-                </div>
-                <p class="footer-text">
-                    Built for CodeIntern Task 1 | Responsive Portfolio Website
-                </p>
-                <p class="copyright" id="copyrightYear">
-                    <!-- Year will be added by JavaScript -->
-                </p>
-            </div>
+            <p>&copy; 2025 Yanbode Adedayo David. Built with ❤️ and lots of debugging!</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">CodeIntern Task 1 Submission</p>
         </div>
     </footer>
-    <script>
-        // ===== FEATURE 1: Mobile Menu Toggle =====
-        // This makes the menu work on mobile phones
-        const menuBtn = document.getElementById('menuBtn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        if (menuBtn) {
-            menuBtn.addEventListener('click', function() {
-                navLinks.classList.toggle('show');
-                console.log('Menu button clicked!');
-            });
-        }
-        
-        // ===== FEATURE 2: Click Counter =====
-        // Counts how many times you click the button
-        const clickCounter = document.getElementById('clickCounter');
-        const countDisplay = document.getElementById('count');
-        let count = 0;
-        
-        if (clickCounter) {
-            clickCounter.addEventListener('click', function() {
-                count++; // Add 1 to count
-                countDisplay.textContent = count; // Update display
-                console.log('Button clicked ' + count + ' times');
-            });
-        }
-        
-        // ===== FEATURE 3: Current Time Display =====
-        // Shows the current time on the page
-        function updateTime() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString();
-            const timeElement = document.getElementById('currentTime');
-            
-            if (timeElement) {
-                timeElement.textContent = timeString;
-            }
-        }
-        
-        // Update time every second
-        setInterval(updateTime, 1000);
-        updateTime(); // Show time immediately
-        
-        // ===== BONUS: Auto Copyright Year =====
-        // Updates copyright year automatically
-        const yearElement = document.getElementById('copyrightYear');
-        if (yearElement) {
-            const currentYear = new Date().getFullYear();
-            yearElement.textContent = `© ${currentYear} Yanbode Adedayo David`;
-        }
-        
-        // Simple message in console
-        console.log('Portfolio loaded successfully! Made for CodeIntern.');
-    </script>
 
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
-</html>
+            </html>
